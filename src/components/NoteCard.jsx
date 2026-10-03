@@ -27,6 +27,17 @@ const NoteCard = ({ note }) => {
     setZIndex(cardRef.current);
   }, []);
 
+  useEffect(() => {
+    const handleBeforeUnload = (e) => {
+      if (saving) {
+        e.preventDefault();
+        e.returnValue = ''; // Show default browser warning
+      }
+    };
+    window.addEventListener("beforeunload", handleBeforeUnload);
+    return () => window.removeEventListener("beforeunload", handleBeforeUnload);
+  }, [saving]);
+
   const mouseDown = (e) => {
     if (e.target.className === "card-header") {
       mouseStartPos.x = e.clientX;

@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from "react";
-import Trash from "../icons/Trash";
 import { db } from "../appwrite/databases";
 import { setNewOffset, autoGrow, setZIndex, bodyParser } from "../utils";
 import DeleteButton from "./DeleteButton";

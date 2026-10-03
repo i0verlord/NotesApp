@@ -22,6 +22,7 @@ const Color = ({ color }) => {
 
       db.notes.update(selectedNote.$id, { colors: JSON.stringify(color) });
     } catch (error) {
+      console.error(error);
       alert("You must select a note before changing colors");
     }
   };

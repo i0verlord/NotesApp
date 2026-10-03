@@ -1,4 +1,3 @@
-import React from "react";
 import Trash from "../icons/Trash";
 import { db } from "../appwrite/databases";
 import { useContext } from "react";
@@ -7,7 +6,7 @@ import { NotesContext } from "../context/NotesContext";
 const DeleteButton = ({ noteId }) => {
   const { setNotes } = useContext(NotesContext);
 
-  const handleDelete = async (e) => {
+  const handleDelete = async () => {
     console.log("DeleteButton.handleDelete", { noteId });
     try {
       await db.notes.delete(noteId);

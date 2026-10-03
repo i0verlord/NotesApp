@@ -1,4 +1,4 @@
-import React from "react";
+
 
 const Spinner = ({ color = "#fff", size = "20" }) => {
   return (
